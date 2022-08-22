@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -12,7 +11,7 @@ app.use(bodyParser.json());
  app.use(express.json());
 app.use(express.static('resources'));
  
-// const port=process.env.PORT || 8081;
+const port=process.env.PORT || 8081;
 global.__basedir = __dirname;
 
 // Configuring the database
@@ -24,10 +23,7 @@ mongoose.connect(mongoString,{
   useFindAndModify:false,
 });
 const database=mongoose.connection
- 
 mongoose.Promise = global.Promise;
-
-
 database.on('error', (error) => {
   console.log(error)
 })
@@ -35,12 +31,10 @@ database.on('error', (error) => {
 database.once('connected', () => {
   console.log('Database Connected');
 })
-
- 
 require('./app/routes/user.route.js')(app);
  
-app.listen(8081,()=>{
-  console.log('Server Started at ${8081}')
+app.listen(port,()=>{
+  console.log(`Server Started at ${port}`)
 })
 
 
