@@ -22,29 +22,47 @@
 		<form id="userForm">
 		  <div class="form-group">
 			<label for="firstname">FirstName:</label>
-			<input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" />
+			<input type="text" class="form-control" id="firstname" placeholder="Enter FirstName" required />
 		  </div>
 		  <br>
 		  <div class="form-group">
 			<label for="lastname">LastName:</label>
-			<input type="text" class="form-control" id="lastname" placeholder="Enter LastName"/>
+			<input type="text" class="form-control" id="lastname" placeholder="Enter LastName" required/>
 		  </div>
 		  <br>
 		   <div class="form-group">
 			<label for="mobileno">Mobile no:</label>
-			<input type="number" class="form-control" id="mobileno" placeholder="Enter Mobile no" value=""/>
+			<input type="number" class="form-control" id="mobileno" placeholder="Enter Mobile no" value="" required/>
 		  </div>
 		  <br>
 		  <div class="form-group">
-			<label for="email">Emailid:</label>
+			<label for="email">Emailid:  </label>
 			<!-- <input type="text" class="form-control" id="Email" placeholder="Enter Emailid"/> -->
 			<input type="email" class="form-control" id="email" placeholder="email" required="required">
 		  </div>
-		  <br>
-		 <div class="form-group">
-			<label for="address">Address:</label>
-			<input type="text" class="form-control" id="address" placeholder="Enter Address" required="required"/>
+		  
+		 <p>Address:</p>
+		  
+		  <div class="form-group">
+			<label for="street">Street:</label>
+			<input type="text" class="form-control" id="street" placeholder="Enter street name" required />
 		  </div>
+		  <br>
+		  <div class="form-group">
+			<label for="city">City:</label>
+			<input type="text" class="form-control" id="city" placeholder="Enter city name" required/>
+		  </div>
+		  <br>
+		  <div class="form-group">
+			<label for="state">State:</label>
+			<input type="text" class="form-control" id="state" placeholder="Enter state name" required />
+		  </div>
+		  <br>
+		  <div class="form-group">
+			<label for="country">Country:</label>
+			<input type="text" class="form-control" id="country" placeholder="Enter country name" required />
+		  </div>
+		  
 		  <br>
 		  <div class="form-group">
 			<label for="loginid">Loginid:</label>

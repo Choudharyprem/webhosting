@@ -4,20 +4,23 @@ const { isValidPassword } = require('mongoose-custom-validators');
 const { default: isEmail } = require('validator/lib/isEmail');
 const UserSchema = mongoose.Schema({
     firstname: {
-        required: true,
+        required: [true,"please fill the firstname"],
         trim:true,
         unique:true,
         type: String,
         minlength:[2,"minimum 2 letter's"],
-        maxlength:[12,"maximum 10 letter's"]
+        maxlength:[12,"maximum 10 letter's"],
+       
+       
     },
    lastname: {
-        required: true,
+        required: [true,"please fill the lastname"],
         trim:true,
         unique:true,
         type: String,
         minlength:[2,"minimun 2 letter's"],
         maxlength:[10,"maximum 10 letter's"]
+        
     },
     mobileno:{
         type: Number,
@@ -38,10 +41,18 @@ email:{
       message: '{VALUE} is not a valid email!'
     }
 },
-address:{
+street:{
     type:String,
-    required:true,
-    trim:true
+    required:true
+},city:{
+   type:String,
+   required:true
+},state:{
+    type:String,
+    required:true
+},country:{
+  type:String,
+  required:true
 },
 loginid:{
     type: String,

@@ -16,9 +16,12 @@ $( document ).ready(function() {
     		lastname :  $("#lastname").val(),
 			mobileno:   $("#mobileno").val(),
 			email:    $("#email").val(),
-			address: $("#address").val(),
+		    street: $("#street").val(),
+             city: $("#city").val(),
+			 state:$("#state").val(),
+			 country: $("#country").val(),
 			loginid:    $("#loginid").val(),
-            password:     $("#password").val(),
+            password:     $("#password").val()
 					// password: req.body.password
 			
     	}
@@ -31,7 +34,7 @@ $( document ).ready(function() {
 			data : JSON.stringify(formData),
 			dataType : 'json',
 			success : function(user) {
-				$("#postResultDiv").html(`<p>Post Successfully! <br>--> ${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.address} ${user.loginid} ${user.password}</p>`);
+				$("#postResultDiv").html(`<p>Post Successfully! <br>--> ${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.street} ${user.city} ${user.state} ${user.country} ${user.loginid} ${user.password}</p>`);
 			console.log(user);
 			},
 			error : function(e) {
@@ -50,7 +53,10 @@ $( document ).ready(function() {
     	$("#lastname").val("");
 		$("#mobileno").val("");
 		$("#email").val("");
-	    $("#address").val("");
+	    $("street").val("");
+		$("city").val("");
+		$("state").val("");
+		$("country").val("");
 		$("#loginid").val("");
         $("#password").val("");
     }

@@ -10,10 +10,13 @@ exports.save = (req, res) => {
 		lastname: req.body.lastname,
         mobileno:req.body.mobileno,
         email:req.body.email,
-        address:req.body.address,
+        street:req.body.street,
+        city:req.body.city,
+        state:req.body.state,
+        country:req.body.country,
         loginid:req.body.loginid,
         password:req.body.password,
-        // Password:req.body.Password
+        
     });
  
     // Save a Customer in the MongoDB
@@ -25,6 +28,9 @@ exports.save = (req, res) => {
             message: err.message
         });
     });
+
+   
+   
 };
  
 // Fetch all Users
