@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-
+const cors=require('cors');
 const mongoString = process.env.DATABASE_URL
 
 const app = express();
@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
  app.use(express.json());
+ app.use(cors());
 app.use(express.static('resources'));
  
 const port=process.env.PORT || 8081;
