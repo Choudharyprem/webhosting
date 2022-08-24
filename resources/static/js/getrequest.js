@@ -18,6 +18,7 @@ $( document ).ready(function() {
 					$('#getResultDiv .list-group').append(user.firstname+" "+user.lastname+ " "+user.mobileno+" "+user.email+" "+user.street+" "+user.city+" "+user.state+" "+user.country+" "+user.loginid+" "+user.password+" "+"<br>")
 				});
 				console.log("Success: ", result);
+				
 			},
 			error : function(e) {
 				$("#getResultDiv").html("<strong>Error</strong>");

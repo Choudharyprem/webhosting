@@ -36,7 +36,7 @@ email:{
     required: [true, "email field is not provided. Cannot create user without email "],
     validate: {
       validator: function (v) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        return /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/.test(v);
       },
       message: '{VALUE} is not a valid email!'
     }
