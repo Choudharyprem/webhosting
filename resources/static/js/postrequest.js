@@ -290,7 +290,33 @@ $( document ).ready(function() {
 		// Prevent the form from submitting via the browser.
 		event.preventDefault();
 		ajaxPost();
-		
+		user_err=true;
+	 last_err=true;
+	 mobile_err=true;
+     email_err=true;
+     street_err=true;
+     city_err=true;
+     state_err=true;
+     country_err=true;
+	 loginid_err=true;
+	 password_err=true;
+	 
+		username_check();
+		userlastname_check();
+		usermobile_check();
+		useremail_check();
+		userstreet_check();
+		usercity_check();
+		userstate_check();
+		usercountry_check();
+		userloginid_check();
+		userpassword_check();
+
+		if((user_err==true) &&(last_err==true)&&(mobile_err==true)&&(email_err==true)&&(street_err==true)&&(city_err==true)&&(state_err==true)&&(country_err==true)&&(loginid_err==true)&&(password_err==true)){
+			return true;
+		}else{
+			return false;
+		}
 	});
     
     
