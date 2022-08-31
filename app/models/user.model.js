@@ -3,6 +3,22 @@ const validator=require('validator');
 const { isValidPassword } = require('mongoose-custom-validators');
 const { default: isEmail } = require('validator/lib/isEmail');
 const UserSchema = mongoose.Schema({
+  username:{
+    required: [true,"please fill the username"],
+    trim:true,
+    unique:true,
+    type: String,
+    minlength:[2,"minimum 2 letter's"],
+    maxlength:[12,"maximum 10 letter's"],
+  },
+  room:{
+    required: [true,"please fill the username"],
+    trim:true,
+    unique:true,
+    type: String,
+    minlength:[2,"minimum 2 letter's"],
+    maxlength:[12,"maximum 10 letter's"],
+  },
     firstname: {
         required: [true,"please fill the firstname"],
         trim:true,
@@ -10,8 +26,6 @@ const UserSchema = mongoose.Schema({
         type: String,
         minlength:[2,"minimum 2 letter's"],
         maxlength:[12,"maximum 10 letter's"],
-       
-       
     },
    lastname: {
         required: [true,"please fill the lastname"],
@@ -88,7 +102,7 @@ password:{
 
 
 // const User = mongoose.model('User', UserSchema);
-
+const User=mongoose.model('firstname',UserSchema);
 module.exports = mongoose.model('User', UserSchema);
 
 
@@ -100,32 +114,3 @@ module.exports = mongoose.model('User', UserSchema);
 
 
 
-
-
-
-
-// address: [
-//     {
-//       locality: { type: Number, unique: true },
-//       pincode: { type: Number, unique: true },
-//       city: { type: String, unique: true },
-//       state: { type: String, unique: true },
-//       country: {
-//         type: String,
-//         unique: true,
-//       },
-//       desc: {
-//         type: String
-//       },
-//     },
-//   ],
-
-
-//  type:String,
-//     required:true,
-//     trim:true,
-//     unique:true,
-//       validate(value){
-//         if(!validator.isEmail(value)){
-//             throw new Error("Email is inValid");            }
-//       }

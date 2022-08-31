@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>JQuery Ajax-NodeJS/Express/mongodb</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -14,92 +14,103 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
   <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
   <script src="/static/js/getrequest.js"></script>
   <script src="/static/js/postrequest.js"></script>
-</head>
- 
-<body> 
-<div class="container"> 
-<div class="col-sm-4">
-	<h3>NodeJS/Express Post/Get Ajax</h3>
-	<div>		
-		<form id="userForm">
-		  <div class="form-group">
-			<label for="firstname">FirstName:</label>
-			<input type="text" class="form-control" id="firstname" placeholder="Enter FirstName"  />
-			<h5 id="usercheck" ></h5>
-		  </div>
-		 
-		  <div class="form-group">
-			<label for="lastname">LastName:</label>
-			<input type="text" class="form-control" id="lastname" placeholder="Enter LastName" />
-			<h5 id="lastcheck" ></h5>
-		  </div>
 		
-		   <div class="form-group">
-			<label for="mobileno">Mobile no:</label>
-			<input type="number" class="form-control" id="mobileno" placeholder="Enter Mobile no" value="" />
-		    <h5 id="mobilecheck" ></h5>
+		<!-- <link rel="stylesheet" href="css/style.css" /> -->
+		<title>ChatCord App</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-sm-4">
+				<h3>NodeJS/Express Post/Get Ajax</h3>
+				<form id="" action="chat.html">
+					<div class="form-group">
+						<label for="username">Username</label>
+						<input
+						class="form-control"
+							type="text"
+							name="username"
+							id="username"
+							placeholder="Enter username..."
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label for="room">Room</label>
+						<input type="text"class="form-control"name="room" id="room" placeholder="Enter room name"/>
+					</div>
+					<div class="form-group">
+						<label for="firstname">FirstName:</label>
+						<input type="text" class="form-control" id="firstname" placeholder="Enter FirstName"  />
+						<h5 id="usercheck" ></h5>
+					  </div>
+					  <div class="form-group">
+						<label for="lastname">LastName:</label>
+						<input type="text" class="form-control" id="lastname" placeholder="Enter LastName" />
+						<h5 id="lastcheck" ></h5>
+					  </div>
+					  <div class="form-group">
+						<label for="mobileno">Mobile no:</label>
+						<input type="number" class="form-control" id="mobileno" placeholder="Enter Mobile no" value="" />
+						<h5 id="mobilecheck" ></h5>
+					</div>
+					<div class="form-group">
+						<label for="email">Emailid:</label>
+						<input type="email" class="form-control" id="email" placeholder="email" >
+						<h5 id="emailcheck" ></h5>
+					  </div>
+					  <div class="form-group">
+						<label for="street">Street:</label>
+						<input type="text" class="form-control" id="street" placeholder="Enter street name"  />
+						<h5 id="streetcheck" ></h5>
+					  </div>
+					 
+					  <div class="form-group">
+						<label for="city">City:</label>
+						<input type="text" class="form-control" id="city" placeholder="Enter city name"  />
+						<h5 id="citycheck" ></h5>
+					  </div>
+					
+					  <div class="form-group">
+						<label for="state">State:</label>
+						<input type="text" class="form-control" id="state" placeholder="Enter state name" >
+						<h5 id="statecheck" ></h5>
+					  </div>
+					
+					  <div class="form-group">
+						<label for="country">Country:</label>
+						<input type="text" class="form-control" id="country" placeholder="Enter country name"  />
+						<h5 id="countrycheck" ></h5>
+					  </div>
+					  <div class="form-group">
+						<label for="loginid">loginid:</label>
+						<input type="text" class="form-control" id="loginid" placeholder="Enter loginid" />
+						<h5 id="loginidcheck" ></h5>
+					  </div>
+					 <div class="form-group">
+						<label for="password">password</label>
+						<input type="password" class="form-control" id="password" placeholder="Enter password" />
+						<h5 id="passwordcheck" ></h5>
+					  </div>
+					
+					<button type="submit" class="btn btn-default">Submit</button>
+				</form>
+			</div>
 		</div>
-		
-		  <div class="form-group">
-			<label for="email">Emailid:</label>
-			<input type="email" class="form-control" id="email" placeholder="email" >
-			<h5 id="emailcheck" ></h5>
-		  </div>
-		 
-		  
-		  <div class="form-group">
-			<label for="street">Street:</label>
-			<input type="text" class="form-control" id="street" placeholder="Enter street name"  />
-			<h5 id="streetcheck" ></h5>
-		  </div>
-		 
-		  <div class="form-group">
-			<label for="city">City:</label>
-			<input type="text" class="form-control" id="city" placeholder="Enter city name"  />
-			<h5 id="citycheck" ></h5>
-		  </div>
-		
-		  <div class="form-group">
-			<label for="state">State:</label>
-			<input type="text" class="form-control" id="state" placeholder="Enter state name" >
-			<h5 id="statecheck" ></h5>
-		  </div>
-		
-		  <div class="form-group">
-			<label for="country">Country:</label>
-			<input type="text" class="form-control" id="country" placeholder="Enter country name"  />
-			<h5 id="countrycheck" ></h5>
-		  </div>
-		
-		  <div class="form-group">
-			<label for="loginid">Loginid:</label>
-			<input type="text" class="form-control" id="loginid" placeholder="Enter Loginid" />
-			<h5 id="loginidcheck" ></h5>
-		  </div>
-		 
-		 <div class="form-group">
-			<label for="password">password</label>
-			<input type="password" class="form-control" id="password" placeholder="Enter password" />
-			<h5 id="passwordcheck" ></h5>
-		  </div>
-		 
-		  <button type="submit" class="btn btn-default">Submit</button>
-		</form>
+		<div id="postResultDiv" >
+		</div>
+		<br>
+		<div>
+			<button id="allUsers" type="button" class="btn btn-default">Users</button>
+			<div id="getResultDiv">
+				<ul class="list-group">
+				</ul>
+			</div>
+		</div>
+	</div>	
 	</div>
-	<div id="postResultDiv">
-	</div>
-	<br>
-	<div>
-		<button id="allUsers" type="button" class="btn btn-default">Users</button>
-		<div id="getResultDiv">
-	        <ul class="list-group">
-	    	</ul>
-    	</div>
-	</div>
-</div>	
-</div>
-</body>
+	</body>
 </html>

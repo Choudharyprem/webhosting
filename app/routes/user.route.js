@@ -7,7 +7,9 @@ module.exports = function(app) {
     const users = require('../controllers/user.controller.js');
 	
 	var path = __basedir + '/views/';
+	// var path = __basedir + '/public/';
 	
+
 	router.use(function (req,res,next) {
 		console.log("/" + req.method);
 		next();
@@ -16,16 +18,22 @@ module.exports = function(app) {
 	app.get('/', (req,res) => {
 		res.sendFile(path + "index.html");
 	});
-	
+
+	app.get('/success',(req,res)=>{
+		res.sendFile(path +"chat.html")
+	})
     // Save a User to MongoDB
-    app.post('/api/users/save', users.save);
- 
+    app.post('/api/users/save', users.save)
+
     // Retrieve all Users
     app.get('/api/users/all', users.findAll);
 	
 	app.use("/",router);
- 
-	app.use("*", (req,res) => {
-		res.sendFile(path + "404.html");
-	});
+	app.use("/success",router);
+	// app.use("/register",router);
+	app.post('/',(req,res,next)=>{
+		console.log(req.body);
+		res.redirect('/success');
+	})
+
 }

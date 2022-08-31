@@ -324,6 +324,8 @@ $( document ).ready(function() {
     	
     	// PREPARE FORM DATA
     	var formData = {
+			username:$("#username").val(),
+			room:$("#room").val(),
     		firstname : $("#firstname").val(),
     		lastname :  $("#lastname").val(),
 			mobileno:   $("#mobileno").val(),
@@ -336,8 +338,7 @@ $( document ).ready(function() {
             password:     $("#password").val()
 					// password: req.body.password
 			
-    	}
-    	
+				}
     	// DO POST
     	$.ajax({
 			type : "POST",
@@ -346,10 +347,11 @@ $( document ).ready(function() {
 			data : JSON.stringify(formData),
 			dataType : 'json',
 			success : function(user) {
-				$("#postResultDiv").html(`<p>Post Successfully! <br>--> ${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.street} ${user.city} ${user.state} ${user.country} ${user.loginid} ${user.password}</p>`);
+				$("#postResultDiv").html(`<p>Post Successfully! <br>-->${user.username} ${user.room} ${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.street} ${user.city} ${user.state} ${user.country} ${user.loginid} ${user.password}</p>`);
 			console.log(user);
-			
+			window.location.href="http://localhost:8081/success"
 			},
+			
 			error : function(e) {
 				alert("Error!")
 				console.log("ERROR: ", e);
@@ -364,6 +366,8 @@ $( document ).ready(function() {
     }
     
     function resetData(){
+		$("#username").val("");
+		$("#room").val("");
     	$("#firstname").val("");
     	$("#lastname").val("");
 		$("#mobileno").val("");
@@ -375,5 +379,6 @@ $( document ).ready(function() {
 		$("#loginid").val("");
         $("#password").val("");
     }
+	
 })
 // + " "+user.mobileno+" "+user.Emailid+" "+user.Address+" "+user.Loginid+" "+user.password
