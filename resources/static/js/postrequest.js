@@ -350,12 +350,12 @@ $( document ).ready(function() {
 				$("#postResultDiv").html(`<p>Post Successfully! <br>-->${user.username} ${user.room} ${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.street} ${user.city} ${user.state} ${user.country} ${user.loginid} ${user.password}</p>`);
 			console.log(user);
 			window.location.href="http://localhost:8081/success"
+			// window.location.href="/"
 			},
 			
 			error : function(e) {
 				alert("Error!")
 				console.log("ERROR: ", e);
-				
 			}
 			
 		});

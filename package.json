@@ -25,6 +25,7 @@
     "moment": "^2.29.4",
     "mongoose": "^5.13.14",
     "mongoose-custom-validators": "^0.0.4",
+    "querystringify": "^2.2.0",
     "socket.io": "^4.5.1",
     "socket.io-client": "^4.5.1",
     "validator": "^13.7.0"
