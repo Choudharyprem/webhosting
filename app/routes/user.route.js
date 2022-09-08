@@ -19,9 +19,9 @@ module.exports = function(app) {
 		res.sendFile(path + "index.html");
 	});
 
-	app.get('/success',(req,res)=>{
-		res.sendFile(path +"chat.html")
-	})
+	// app.get('/success',(req,res)=>{
+	// 	res.sendFile(path +"chat.html")
+	// })
     // Save a User to MongoDB
     app.post('/api/users/save', users.save)
 
@@ -29,11 +29,11 @@ module.exports = function(app) {
     app.get('/api/users/all', users.findAll);
 	
 	app.use("/",router);
-	app.use("/success",router);
+	// app.use("/success",router);
 	// app.use("/register",router);
-	app.post('/',(req,res,next)=>{
-		console.log(req.body);
-		res.redirect('/success');
-	})
+	// app.post('/',(req,res,next)=>{
+	// 	console.log(req.body);
+	// 	res.redirect('/success');
+	// })
 
 }

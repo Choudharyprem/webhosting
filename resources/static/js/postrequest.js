@@ -317,15 +317,15 @@ $( document ).ready(function() {
 		}else{
 			return false;
 		}
+	
+		
 	});
-    
+	
     
     function ajaxPost(){
     	
     	// PREPARE FORM DATA
     	var formData = {
-			username:$("#username").val(),
-			room:$("#room").val(),
     		firstname : $("#firstname").val(),
     		lastname :  $("#lastname").val(),
 			mobileno:   $("#mobileno").val(),
@@ -337,8 +337,12 @@ $( document ).ready(function() {
 			loginid:    $("#loginid").val(),
             password:     $("#password").val()
 					// password: req.body.password
-			
 				}
+				var targetForm = $('#userForm');
+				var urlWithParams = targetForm.attr('action') + "?" + targetForm.serialize();
+				// console.log(urlWithParams);
+				// alert(urlWithParams);
+					$(location).attr('href', urlWithParams);
     	// DO POST
     	$.ajax({
 			type : "POST",
@@ -347,10 +351,13 @@ $( document ).ready(function() {
 			data : JSON.stringify(formData),
 			dataType : 'json',
 			success : function(user) {
-				$("#postResultDiv").html(`<p>Post Successfully! <br>-->${user.username} ${user.room} ${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.street} ${user.city} ${user.state} ${user.country} ${user.loginid} ${user.password}</p>`);
-			console.log(user);
-			window.location.href="http://localhost:8081/success"
-			// window.location.href="/"
+				$("#postResultDiv").html(`<p>Post Successfully! <br>-->${user.firstname} ${user.lastname} ${user.mobileno} ${user.email} ${user.street} ${user.city} ${user.state} ${user.country} ${user.loginid} ${user.password}</p>`);
+				console.log(user)
+			// location.window.href = "http://localhost:8081/success";
+			//  var url = "http://localhost:8081;
+			// 	$(location).attr('href',url);
+			
+				
 			},
 			
 			error : function(e) {
@@ -366,8 +373,6 @@ $( document ).ready(function() {
     }
     
     function resetData(){
-		$("#username").val("");
-		$("#room").val("");
     	$("#firstname").val("");
     	$("#lastname").val("");
 		$("#mobileno").val("");

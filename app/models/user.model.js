@@ -3,22 +3,6 @@ const validator=require('validator');
 const { isValidPassword } = require('mongoose-custom-validators');
 const { default: isEmail } = require('validator/lib/isEmail');
 const UserSchema = mongoose.Schema({
-  username:{
-    required: [true,"please fill the username"],
-    trim:true,
-    unique:true,
-    type: String,
-    minlength:[2,"minimum 2 letter's"],
-    maxlength:[12,"maximum 10 letter's"],
-  },
-  room:{
-    required: [true,"please fill the username"],
-    trim:true,
-    unique:true,
-    type: String,
-    minlength:[2,"minimum 2 letter's"],
-    maxlength:[12,"maximum 10 letter's"],
-  },
     firstname: {
         required: [true,"please fill the firstname"],
         trim:true,
@@ -33,8 +17,7 @@ const UserSchema = mongoose.Schema({
         unique:true,
         type: String,
         minlength:[2,"minimun 2 letter's"],
-        maxlength:[10,"maximum 10 letter's"]
-        
+        maxlength:[10,"maximum 10 letter's"]  
     },
     mobileno:{
         type: Number,

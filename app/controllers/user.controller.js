@@ -6,8 +6,6 @@ exports.save = (req, res) => {
 	
     // Create a Customer
     const user = new User({
-        username:req.body.username,
-        room:req.body.room,
         firstname: req.body.firstname,
 		lastname: req.body.lastname,
         mobileno:req.body.mobileno,
