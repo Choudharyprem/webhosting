@@ -23,8 +23,9 @@ module.exports = function(app) {
 	// 	res.sendFile(path +"chat.html")
 	// })
     // Save a User to MongoDB
-    app.post('/api/users/save', users.save)
-
+	app.get('/api/users/save',users.save)
+    app.post('/api/users/save', users.save);
+	
     // Retrieve all Users
     app.get('/api/users/all', users.findAll);
 	
