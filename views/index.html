@@ -17,13 +17,15 @@
   <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
   <script src="/static/js/getrequest.js"></script>
   <script src="/static/js/postrequest.js"></script>
-
+  <link rel="stylesheet" href="css/style.css" />
 </head>
- 
 <body> 
 <div class="container"> 
-<div class="col-sm-4">
-	<h3>NodeJS/Express Post/Get Ajax</h3>
+<div class="col-sm-6">
+	<h3>Signup Form</h3>
+	<div class="page-links">
+		<a href="login.html">Login</a>&nbsp&nbsp&nbsp<a href="/" class="active">Register</a>
+		</div>
 	<div>		
 		<form id="userForm" action="chat.html" method="get">
 		  <div class="form-group">
@@ -50,7 +52,7 @@
 			<label for="mobileno">Mobile no:</label>
 			<select name="room" id="room" style="display:none;">
 				<option value="mobileno">
-					<input type="number" class="form-control" name="mobile" id="mobileno" placeholder="Enter Mobile no" value="" />
+					<input type="number" class="form-control" name="mobileno" id="mobileno" placeholder="Enter Mobile no"  />
 				</option>
 		</select>
 		    <h5 id="mobilecheck" ></h5>
@@ -122,7 +124,7 @@
 			</select>
 			<h5 id="passwordcheck" ></h5>
 		  </div>
-		  <button type="submit" class="btn btn-default">Submit</button>
+		  <button type="submit" class="btn btn-default">Register</button>
 		 
 		</form>	
 	

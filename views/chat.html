@@ -12,14 +12,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <title>App</title>
     <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <SCRIPT TYPE="text/javascript"> 
-    function targetopener(mylink, closeme, closeonly){
-       if (! (window.focus && window.opener))return true;
-        window.opener.focus(); 
-      if (! closeonly)window.opener.location.href=mylink.href;
-       if (closeme)window.close();
-        return false; } 
-        </SCRIPT>
   </head>
   <body>
     <span id="result"></span>
@@ -29,11 +21,22 @@
           <h2 id="room-name"></h2>
           <h3>Users</h3>
           <ul id="users">
-           
           </ul>
         </div>
       </div>
-</script>
+      <div class="add__todo__container" id="dialog">
+        <div class="form__container">
+          <div class="close" id="close">X</div>
+          <div class="form">
+            <div class="heading">
+              User's Information
+          </div>
+          <div class="text">
+              <textarea id="todo__text"></textarea>
+          </div>
+          </div>
+        </div>
+      </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
       integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
