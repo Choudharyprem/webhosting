@@ -18,16 +18,16 @@
   <script src="/static/js/getrequest.js"></script>
   <script src="/static/js/postrequest.js"></script>
   <link rel="stylesheet" href="css/style.css" />
+ 
 </head>
 <body> 
 <div class="container"> 
 <div class="col-sm-6">
 	<h3>Signup Form</h3>
-	<div class="page-links">
-		<a href="login.html">Login</a>&nbsp&nbsp&nbsp<a href="/" class="active">Register</a>
-		</div>
-	<div>		
-		<form id="userForm" action="chat.html" method="get">
+	 <div class="page-links">
+	<a href="/login"><button id="addBtn">Login</button></a>&nbsp &nbsp &nbsp<button><a href="/">Register</a></button>
+	  </div> 
+		<form id="userForm" action="/socket" method="post">
 		  <div class="form-group">
 			<label for="firstname">FirstName:</label>
 			<select name="room" id="room" style="display:none;">
@@ -125,12 +125,8 @@
 			<h5 id="passwordcheck" ></h5>
 		  </div>
 		  <button type="submit" class="btn btn-default">Register</button>
-		 
 		</form>	
 	
-	
-	</div>
-
 	<div id="postResultDiv" >
 	</div>
 	<br>
@@ -143,6 +139,32 @@
 	</div>
 </div>	
 </div>
-
+<!-- <script src="/js/login.js"></script> -->
 </body>
 </html>
+
+
+
+
+<!-- <div class="login-page" id="login-box">
+	<div class="form-data">
+	 <div class="close" id="close">X</div>
+	 <div class="form-group">
+		 <div class="form-group">
+			 <label for="loginid">loginid:</label>
+			 <input type="text" name="loginid"class="form-control" id="loginid"  placeholder="Enter loginid" />
+			 <h5 id="loginidcheck" ></h5>
+			 </div>
+			 <div class="form-group">
+				 <label for="password">password</label>
+				 <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" />
+				 <h5 id="passwordcheck" ></h5>
+			   </div>
+	   <div class="form-button">
+		 <a href="chat.html"><button id="submit" type="submit" class="ibtn">Login</button></a> <a href="/"">Forget password?</a>
+		 </div>
+	</div>
+   </div>
+   <div class="page-links">
+	   <button id="addBtn">Login</button>&nbsp &nbsp &nbsp<button><a href="/">Register</a></button>
+	 </div> -->

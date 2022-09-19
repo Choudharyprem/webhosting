@@ -1,45 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>login Form</title>
- <!-- Latest compiled and minified CSS -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <title>JQuery Ajax-NodeJS/Express/mongodb</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
- <!-- jQuery library -->
- <script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
- 
- <!-- Latest compiled JavaScript -->
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- 
-   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-   <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
-   <script src="/static/js/getrequest.js"></script>
-   <script src="/static/js/postrequest.js"></script>
-<!-- <link rel="stylesheet" href="css/style.css" /> -->
+<!-- jQuery library -->
+<script  type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+  <script src="https://unpkg.com/validator@latest/validator.min.js"></script>
+  <script src="/static/js/getrequest.js"></script>
+  <script src="/static/js/postrequest.js"></script>
+  <!-- <link rel="stylesheet" href="css/style.css" /> -->
 </head>
-<body>
-    <div class="container"> 
-        <div class="col-sm-6">
-<h3>Login Form</h3>
-<form class="form">
-    <input id="email" class="form-control" type="text" name="loginid" placeholder="Login Id" required>&nbsp
-    <input id="password" class="form-control" type="password" name="password" placeholder="Password" required>&nbsp
-    <!-- <input type="checkbox" id="chk1"><label for="chk1">Remmeber me</label> -->
-    <div class="form-button">
-   <button id="submit" type="submit" class="ibtn">Login</button> <a href="index.html">Forget password?</a>
-    </div>
-</form>
+<body> 
+<div class="container"> 
+<div class="col-sm-6">
+	<form  id="userForm" action="/socket" method="post">
+		<div class="form-group">
+			<label for="firstname">FirstName:</label>
+			<select name="room" id="room" style="display:none;">
+				<option value="firstname">
+			<input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter FirstName" />
+		</option>
+	</select>
+		<h5 id="usercheck" ></h5>
+		  </div>
+	  <div class="form-group">
+		<label for="email">Emailid:</label>
+		<select name="room" id="room" style="display:none;">
+		  <option value="email">
+	  <input type="email" class="form-control" name="email" id="email" placeholder="email" />
+  </option>
+	  <h5 id="emailcheck" ></h5>
+  </select>
+	</div> 
+	 <div class="form-group">
+		<label for="password">password</label>
+		<select name="room" id="room" style="display:none;">
+			<option value="password">
+		<input type="password" class="form-control" name="password" id="password" placeholder="Enter password" />
+		</option>
+		</select>
+		<h5 id="passwordcheck" ></h5>
+	  </div>
+	  <button type="submit" class="btn">Login</button>
+	</form>
+</div>	
 </div>
-</div>
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
-integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
-crossorigin="anonymous"
-></script>
-<!-- <script src="/socket.io/socket.io.js"></script> -->
-<!-- <script src="js/main.js"></script> -->
-</script><script src="/js/login.js"></script>
+<!-- <script src="js/login.js"></script> -->
 </body>
 </html>
+
+
+
+
+<!-- <div class="login-page" id="login-box">
+	<div class="form-data">
+	 <div class="close" id="close">X</div>
+	 <div class="form-group">
+		 <div class="form-group">
+			 <label for="loginid">loginid:</label>
+			 <input type="text" name="loginid"class="form-control" id="loginid"  placeholder="Enter loginid" />
+			 <h5 id="loginidcheck" ></h5>
+			 </div>
+			 <div class="form-group">
+				 <label for="password">password</label>
+				 <input type="password" class="form-control" name="password" id="password" placeholder="Enter password" />
+				 <h5 id="passwordcheck" ></h5>
+			   </div>
+	   <div class="form-button">
+		 <a href="chat.html"><button id="submit" type="submit" class="ibtn">Login</button></a> <a href="/"">Forget password?</a>
+		 </div>
+	</div>
+   </div>
+   <div class="page-links">
+	   <button id="addBtn">Login</button>&nbsp &nbsp &nbsp<button><a href="/">Register</a></button>
+	 </div> -->

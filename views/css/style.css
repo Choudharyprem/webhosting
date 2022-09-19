@@ -137,3 +137,40 @@ body{
  .page-links a.active:after, .form-body.without-side .form-content .page-links a:hover:after, .form-body.without-side .form-content .page-links a:focus:after {
     background-color: #0092FE;
 }
+
+
+/* login box */
+.login-page {
+    position: fixed;
+    top: center;
+    right:0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+	/* background-color: red; */
+     /* display: flex;  */
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+.form-data {
+    width: 35%;
+    background-color: #ddd;
+    position: relative;
+}
+.form-data{
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    outline: 1px solid #ccc;
+    padding: 20px;
+    animation: zoom 200ms ease-in-out;
+}
+@keyframes zoom {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
